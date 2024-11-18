@@ -17,7 +17,6 @@ import { createContent } from "@/shared/lib/pdf/cupons/createContent";
 import { createCuponPDF } from "@/shared/lib/pdf/cupons/pdf";
 import { createPDFEtiquetas } from "@/shared/lib/pdf/etiquetas/createPDFEtiquetas";
 
-import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Spinner } from "@/components/ui/spinner";
@@ -308,7 +307,7 @@ export default function Page() {
 
   return (
     <div className="flex items-center justify-center h-screen">
-      <div className="flex align-center justify-center flex-col h-[500px] w-[500px] p-5 border-2 border-blue-400">
+      <div className="flex align-center justify-center flex-col h-[480px] w-[500px] p-5 border-2 border-blue-400">
         {loading && (
           <div className="h-full flex  flex-col items-center justify-center">
             <p className="text-xl mb-2 font-bold text-center">
@@ -344,8 +343,8 @@ export default function Page() {
             </div>
             <div className="w-full mt-4">
               <label className="text-sm font-bold">Nome do remetente</label>
-              <Textarea
-                className="p-1 h-20"
+              <Input
+                className="p-1"
                 name="name"
                 placeholder="Endereço do remetente"
                 value={remententeAdd}

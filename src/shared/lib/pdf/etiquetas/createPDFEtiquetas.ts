@@ -27,7 +27,7 @@ function capitalizeFirsts(text: string): string {
     return result
 }
 
-export  async function createPDFEtiquetas(content: Content, remetenteName = "Verônica Rodrigues", extraInitial = 0, extraGap = 0) {
+export  async function createPDFEtiquetas(content: Content, remetenteName = "Verônica Rodrigues", remetente: string, extraInitial = 0, extraGap = 0) {
     const pdfDoc = await PDFDocument.create()
     const { logradouro, bairro, cep, cidade, complemento, estado, nome, numero } = content
 
@@ -35,7 +35,7 @@ export  async function createPDFEtiquetas(content: Content, remetenteName = "Ver
         {
             title: 'REMETENTE',
             name: remetenteName,
-            address:  `Duets Office - Rua Gilberto Studart, 55 - Torre Sul, Sala 1018 - Cocó Fortaleza - CE - CEP: 60192-105`
+            address:  remetente
         },
         {
             title: 'DESTINATÁRIO',
